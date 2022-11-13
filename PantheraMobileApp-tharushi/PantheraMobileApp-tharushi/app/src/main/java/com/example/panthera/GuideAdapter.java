@@ -87,31 +87,31 @@ public class GuideAdapter extends RecyclerView.Adapter<GuideAdapter.ViewHolder> 
             }
         });
 
-//        holder.deletebtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                AlertDialog.Builder builder=new AlertDialog.Builder(holder.guide_name.getContext());
-//                builder.setTitle("Delete safari guide");
-//                builder.setMessage("Are you sure , you want to remove the guide ?");
-//
-//                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialogInterface, int i) {
-//                        FirebaseDatabase.getInstance().getReference().child("Safari Guides")
-//                                .child(getRef(position).getKey()).removeValue();
-//                    }
-//                });
-//
-//                builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialogInterface, int i) {
-//
-//                    }
-//                });
-//
-//                builder.show();
-//            }
-//        });
+        holder.deletebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder builder=new AlertDialog.Builder(holder.guide_name.getContext());
+                builder.setTitle("Delete safari guide");
+                builder.setMessage("Are you sure , you want to remove the guide ?");
+
+                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        FirebaseDatabase.getInstance().getReference().child("Safari Guides")
+                                .child(getRef(position).getKey()).removeValue();
+                    }
+                });
+
+                builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                });
+
+                builder.show();
+            }
+        });
 
 
 
@@ -133,14 +133,14 @@ public class GuideAdapter extends RecyclerView.Adapter<GuideAdapter.ViewHolder> 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            guide_name = itemView.findViewById(R.id.guide_name);
-            guide_address = itemView.findViewById(R.id.guide_address);
-            guide_contact = itemView.findViewById(R.id.guide_contact);
+            guide_name = (TextView)itemView.findViewById(R.id.guide_name);
+            guide_address = (TextView)itemView.findViewById(R.id.guide_address);
+            guide_contact = (TextView)itemView.findViewById(R.id.guide_contact);
 
-            guide_image = itemView.findViewById(R.id.guide_image);
+            guide_image = (ImageView)itemView.findViewById(R.id.guide_image);
 
-            editbtn = itemView.findViewById(R.id.editbtn);
-            deletebtn = itemView.findViewById(R.id.deletebtn);
+            editbtn = (Button)itemView.findViewById(R.id.editbtn);
+            deletebtn = (Button)itemView.findViewById(R.id.deletebtn);
 
 
         }
